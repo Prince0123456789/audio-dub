@@ -18,7 +18,7 @@ def entry_check():
 @router.post("/video")
 async def dub_video(file: UploadFile = File(...)):
     # print("file",file)
-    video_path = f"/Users/princechuabey/Documents/trailer dub/api/app/input/{file.filename}"
+    video_path = f"app/input/{file.filename}"
     with open(video_path, "wb") as f:
         f.write(await file.read())
 
@@ -51,7 +51,7 @@ async def dub_video(file: UploadFile = File(...)):
 
     merge_segments(dubbed_audio_segments, "output/final.wav")
     merge_audio_video(
-        "/input/nvmc2ECk8Lo.mp4",
+        video_path,
         "output/final.wav",
         "output/dubbed_trailer.mp4"
         )
