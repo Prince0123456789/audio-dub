@@ -16,7 +16,19 @@ Merges dubbed audio back into the video
 
 The system is designed specifically for movie trailers, where speech may be Hinglish (Hindi + English mixed).
 
+## Runserver :
 
+uvicorn app.main:app --reload
+http://127.0.0.1:8000
+
+### for app2  : 
+uvicorn app2.main:app --reload
+
+
+Upload video:
+   http://127.0.0.1:8000/dub/video
+   
+   payload = {"file":file_path}
 
 # Tech Stack
 
@@ -45,12 +57,3 @@ Make sure ffmpeg is installed:
     brew install ffmpeg # macOS
     sudo apt install ffmpeg # Ubuntu
 
-Runserver :
-
-uvicorn api.app.main:app --reload
-http://127.0.0.1:8000
-
-Upload video:
-   http://127.0.0.1:8000/dub/video
-   
-   payload = {"file":file_path}
